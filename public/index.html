@@ -1,56 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controller</title>
+  <meta charset="UTF-8">
+  <title>Controller</title>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/styles.css'>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/github-light.css'>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 </head>
 <body>
   <script src="src/index.js"></script>
   <div>
-    <button onclick="robot.forward()">Forward</button>
-    <button onclick="robot.stop()">Stop</button>
-    <button onclick="robot.backward()">Backward</button>
-    <button onclick="robot.left()">Left</button>
-    <button onclick="robot.right()">Right</button>
-    
     <button onclick="robot.connect()">Connect</button>
     <button onclick="robot.disconnect()">Disconnect</button>
-    <input
-      type="range"
-      min="0"
-      max="1"
-      value="100"
-      onchange="robot.changeSpeed(this.value)"
-    />
-  </div>
-  <div>
-    <button onclick="robot.ledOn()">LED On</button>
-    <button onclick="robot.ledOff()">LED Off</button>
-    <button onclick="robot.ledToggle()">LED Toggle</button>
-    <button onclick="robot.ledFlash()">LED Flash</button>
-    <button onclick="robot.ledIsOn()">LED IS On?</button>
-    <button onclick="robot.setNFCUrl()">Set NFC Url</button>
-  </div>
-
-  <div>
-    <button onclick="robot.enableAccelMovement()">Enable Acceleration Movement</button>
-    <button onclick="robot.enableAccelMovement()">Enable Acceleration Movement</button>
-    <button onclick="robot.getAccelValues()">Get Acceleration Values</button>
-  </div>
-
-  <div>
-    <button onclick="robot.getLightVal()">Get Light value</button>
-    <button onclick="robot.getTemperature()">Get temperature</button>
-    <button onclick="robot.getDeviceType()">Get Device Type</button>
-    <button onclick="robot.evaluate()">Evaluate</button>
+    <button onclick="robot.stop()">Stop</button>
+    <button onclick="robot.upload()">Upload</button>
+    <button onclick="robot.getDeviceCode()">getDeviceCode</button>
+    <button onclick="robot.getDeviceFunctions()">getDeviceFunctions</button>
     <button onclick="robot.reset()">reset</button>
+    <button onclick="robot.getBattery()">getBattery</button>
   </div>
 
-  <div>
-    <a href="joystick.html">Joystick</a>
+  <a href="index.html">Home</a>
+<div class="dynamic active highlight highlight-javascript">
+</div>
+<div class="semi highlight highlight-javascript">
+</div>
+<div class="static highlight highlight-javascript">
+</div>
+
+<div id="buttons">
+  <div data-type="dynamic" class="active button dynamic">dynamic</div>
+  <div data-type="semi" class="button semi">semi</div>
+  <div data-type="static" class="button static">static</div>
+</div>
+
+<div id="zone_joystick">
+  <div id="debug">
+    <ul>
+      <li class="position">
+        position :
+        <ul>
+          <li class="x">x : <span class='data'></span></li>
+          <li class="y">y : <span class='data'></span></li>
+        </ul>
+      </li>
+      <li class="force">force : <span class='data'></span></li>
+      <li class="pressure">pressure : <span class='data'></span></li>
+      <li class="distance">distance : <span class='data'></span></li>
+      <li class="angle">
+        angle :
+        <ul>
+          <li class="radian">radian : <span class='data'></span></li>
+          <li class="degree">degree : <span class='data'></span></li>
+        </ul>
+      </li>
+      <li class="direction">
+        direction :
+        <ul>
+          <li class="x">x : <span class='data'></span></li>
+          <li class="y">y : <span class='data'></span></li>
+          <li class="angle">angle : <span class='data'></span></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="dump"></div>
   </div>
+  <div class="zone dynamic active"><h1>dynamic</h1></div>
+  <div class="zone semi"><h1>semi</h1></div>
+  <div class="zone static"><h1>static</h1></div>
+</div>
+
+  <script src='//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js'></script>
+  <script src="./joystick.js"></script>
 
 </body>
 </html>
