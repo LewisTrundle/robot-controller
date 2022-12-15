@@ -1,9 +1,23 @@
 import { Robot } from './robot';
-import { P } from './puck';
 
+var Piecewise = require('piecewise-function');
+const angle_mapping_left = Piecewise([0, 90, 135, 180, 225, 270, 315, 360], [1, 1, 0, -1, 1, -1, 0, 1])
+const angle_mapping_right = Piecewise([0, 90, 135, 180, 225, 270, 315, 360], [-1, 1, 1, 1, 0, -1, 1, -1])
+    
 let robot = new Robot();
-let puck = new P();
-
+// no whitespace allowed between () an {
+// no whitespace allowed between functions
+// get device code doesn't work
+let code = `
+function turn(l_speed, r_speed){
+  analogWrite("D9", r_speed);
+  analogWrite("D10", l_speed);
+}
+function stop(){
+  digitalWrite("D9", 0);
+  digitalWrite("D10", 0);
+}
+`;
 
 export function connect() {
   robot.connect(function () {
@@ -11,9 +25,45 @@ export function connect() {
   });
 };
 
+export function upload() {
+  console.log("Uploading code");
+  robot.loadCode(code);
+}
+
+export function getDeviceCode() {
+  robot.dump().then((deviceData) => {
+    console.log(deviceData);
+  });
+}
+
+export function getDeviceFunctions() {
+  robot.getDeviceFunctions().then((functions) => {
+    console.log(functions);
+  });
+}
+
+export function reset() {
+  console.log("resetting code on device");
+  robot.reset();
+}
+
 export function move(direction, angle, force) {
-  robot.move(direction, angle, force);
+  const a = Math.round(angle.degree);
+  const l_speed = angle_mapping_left(a);
+  const r_speed = angle_mapping_right(a);
+  console.log(l_speed, r_speed);
+  //const l_speed = angle_mapping_left(a);
+  //const r_speed = angle_mapping_right(a);
+  //console.log(`At angle ${a}, turning with\n\tleft motor: ${l_speed}\n\tright motor: ${r_speed}`)
+  //robot.Call.turn(l_speed, r_speed);
 };
+
+
+export function getBattery() {
+  robot.getBattery().then((percentage) => {
+    console.log(percentage);
+  });
+}
 
 export function disconnect() {
   robot.disconnect(function () {
@@ -30,53 +80,9 @@ export function forward() {
 };
 
 export function stop() {
-  robot.stop();
+  robot.Call.stop();
 }
 
 export function backward() {
   robot.backward();
 };
-
-export function ledOn() {
-  puck.ledOn();
-}
-
-export function ledOff() {
-  puck.ledOff();
-}
-
-export function ledToggle() {
-  puck.ledToggle();
-}
-
-export function ledFlash() {
-  puck.ledFlash();
-}
-
-export function ledIsOn() {
-  puck.ledIsOn();
-}
-
-export function setNFCUrl() {
-  puck.setNFCUrl();
-}
-
-export function enableAccelMovement() {
-  puck.enableAccelMovement();
-}
-
-export function disableAccelMovement() {
-  puck.disableAccelMovement();
-}
-
-export function getAccelValues() {
-  puck.getAccelValues();
-}
-
-export function getDeviceType() {
-  puck.getDeviceType();
-}
-
-export function evaluate() {
-  robot.evaluate();
-}

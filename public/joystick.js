@@ -66,6 +66,8 @@ sId('buttons').onclick = sId('buttons').ontouchend = createThrottle;
 
 createNipple('dynamic');
 
+prev_angle = 0;
+
 function bindNipple() {
   joystick.on('start end', function(evt, data) {
     dump(evt.type);
@@ -75,9 +77,11 @@ function bindNipple() {
     
     var angle = data.angle;
     var direction = data.direction;
-    if (direction) {
+    if (Math.abs(angle.degree - prev_angle) > 25) {
+      prev_angle = angle.degree;
       robot.move(direction, angle, data.force);
     }
+    
   }).on('dir:up plain:up dir:left plain:left dir:down ' +
         'plain:down dir:right plain:right',
         function(evt, data) {
