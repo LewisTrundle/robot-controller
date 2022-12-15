@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller</title>
+</head>
+<body>
+  <script src="src/index.js"></script>
+  <div>
+    <button onclick="robot.forward()">Forward</button>
+    <button onclick="robot.stop()">Stop</button>
+    <button onclick="robot.backward()">Backward</button>
+    <button onclick="robot.left()">Left</button>
+    <button onclick="robot.right()">Right</button>
+    
+    <button onclick="robot.connect()">Connect</button>
+    <button onclick="robot.disconnect()">Disconnect</button>
+    <input
+      type="range"
+      min="0"
+      max="1"
+      value="100"
+      onchange="robot.changeSpeed(this.value)"
+    />
+  </div>
+  <div>
+    <button onclick="robot.ledOn()">LED On</button>
+    <button onclick="robot.ledOff()">LED Off</button>
+    <button onclick="robot.ledToggle()">LED Toggle</button>
+    <button onclick="robot.ledFlash()">LED Flash</button>
+    <button onclick="robot.ledIsOn()">LED IS On?</button>
+    <button onclick="robot.setNFCUrl()">Set NFC Url</button>
+  </div>
+
+  <div>
+    <button onclick="robot.enableAccelMovement()">Enable Acceleration Movement</button>
+    <button onclick="robot.enableAccelMovement()">Enable Acceleration Movement</button>
+    <button onclick="robot.getAccelValues()">Get Acceleration Values</button>
+  </div>
+
+  <div>
+    <button onclick="robot.getLightVal()">Get Light value</button>
+    <button onclick="robot.getTemperature()">Get temperature</button>
+    <button onclick="robot.getDeviceType()">Get Device Type</button>
+    <button onclick="robot.evaluate()">Evaluate</button>
+    <button onclick="robot.reset()">reset</button>
+  </div>
+
+  <div>
+    <a href="joystick.html">Joystick</a>
+  </div>
+
+</body>
+</html>
