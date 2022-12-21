@@ -66,21 +66,21 @@ sId('buttons').onclick = sId('buttons').ontouchend = createThrottle;
 
 createNipple('dynamic');
 
-prev_angle = 0;
-
 function bindNipple() {
-  joystick.on('start end', function(evt, data) {
+  joystick.on('start', function(evt, data) {
+    console.log("moving robot");
     dump(evt.type);
     debug(data);
-  }).on('move', function(evt, data) {
+    robot.start();
+
+  }).on('end', function(evt, data) {
+    console.log("stopping robot");
+    robot.stop();
+  }
+
+  ).on('move', function(evt, data) {
     debug(data);
-    
-    var angle = data.angle;
-    var direction = data.direction;
-    if (Math.abs(angle.degree - prev_angle) > 25) {
-      prev_angle = angle.degree;
-      robot.move(direction, angle, data.force);
-    }
+    robot.getSpeeds(data.angle);
     
   }).on('dir:up plain:up dir:left plain:left dir:down ' +
         'plain:down dir:right plain:right',
