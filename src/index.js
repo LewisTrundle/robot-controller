@@ -35,11 +35,13 @@ var left_dir = 0;
 var right_dir = 0;
 var speeds = [];
 var sendCode = null;
+var connected = false;
 
 
 // ----- BUTTONS -----
 export function connect() {
   robot.connect(function () {
+    connected = true;
     console.log("connected");
   });
 };
@@ -70,6 +72,7 @@ export function getBattery() {
 
 export function disconnect() {
   robot.disconnect(function () {
+    connected = false;
     console.log("disconnected");
   });
 };
@@ -77,17 +80,23 @@ export function disconnect() {
 
 // ----- MOVEMENT -----
 export function start() {
+  if (!connected) {
+    connect();
+    return;
+  }
   robot.Call.switchMotor("D8", 0);
   robot.Call.switchMotor("D7", 0);
   sendCode = window.setInterval(moveRobot, 1000);
 }
 
 export function stop() {
+  if (!connected) return;
   window.clearInterval(sendCode);
   robot.Call.stop();
 };
 
 export function getSpeeds(angle) {
+  if (!connected) return;
   const a = Math.round(angle.degree);
   var l_speed = angle_mapping_left(a);
   var r_speed = angle_mapping_right(a);
