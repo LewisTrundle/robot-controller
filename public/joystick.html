@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Joystick Controller</title>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/styles.css'>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/github-light.css'>
+  <link rel="stylesheet" href="joystick/joystick.css">
+  <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+  <script src="src/index.js"></script>
+  <div class="header">
+    <a href="index.html"><img id="back" src="../images/back_button.svg" alt="back button"></a>
+    <h1>Joystick Controller</h1>
+    <div class="header-buttons">
+      <img src="./images/battery.svg" alt="battery" onclick="robot.getBattery()">
+      <a href="joystick-dev.html"><img src="./../images/settings.svg" alt="settings"></a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="buttons">
+      <button onclick="robot.connect()">Connect</button>
+      <button onclick="robot.disconnect()">Disconnect</button>
+      <button id="myBtn">Help</button>
+    </div>
+
+    <div class="joystick">
+      <div class="static highlight highlight-javascript active">
+      </div>
+
+      <div id="zone_joystick">
+        <div id="debug">
+        </div>
+        <div class="zone static active"></div>
+      </div>
+    </div>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>How to Use</h2>
+        </div>
+        <div class="modal-body">
+          <p>Detail instructions are explained <a href="https://github.com/Kirstin813/L4-Individual-Project/tree/main/src#connecting-to-robot">here</a></p>
+        </div>
+        <div class="modal-footer">
+          <h3>Thanks for reading :)</h3>
+        </div>
+      </div>
+    </div>
+
+  <script src='//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js'></script>
+  <script src="joystick/joystick.js"></script>
+
+</body>
+</html>
