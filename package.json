@@ -13,6 +13,7 @@
   "devDependencies": {
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.3",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
@@ -26,6 +27,7 @@
     "@espruino-tools/core": "^1.2.5",
     "@espruino-tools/device-controller": "^2.1.0",
     "i2c-bus": "^5.2.2",
+    "json5": "^2.2.3",
     "nipplejs": "^0.10.0",
     "piecewise-function": "^1.0.0"
   }
