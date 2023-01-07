@@ -1,0 +1,133 @@
+:root {
+  --black: #0c0c0c;
+  --white: #ffffff;
+  --dark-blue: #0B406C;
+  --main-font: "Digital Numbers";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--dark-blue);
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER SECTION */
+.header {
+  display: flex;
+  height: 50px;
+  min-height: 10%;
+  width: 100%;
+  background-color: var(--black);
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  color: var(--white);
+  margin: 0px;
+  margin-top: 5px;
+  height: 40px;
+
+}
+
+.header #battery {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+}
+
+.header #back {
+  position: absolute;
+  cursor: pointer;
+  left: 20px;
+}
+
+
+.content {
+  display: flex;
+  height: 100%;
+  margin: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+}
+
+.buttons button {
+  cursor: pointer;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--main-font);
+  width: 50%;
+  height: 100px;
+  min-height: 10%;
+  margin: 25px;
+  border-radius: 15px;
+}
+
+.joystick {
+  height: 100%;
+  width: 65%;
+}
+
+.joystick #zone_joystick {
+  height: 100%;
+  border-radius: 10px;
+  background-color: none;
+}
+
+.zone {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.zone.active {
+  display: block;
+}
+
+.zone.static {
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+
+.button:hover {
+  background: #eee;
+}
+
+.button:active {
+  background: #ddd;
+}
+
+.button.active {
+  color: white;
+  background: #888;
+}
+
+.button:nth-child(2) {
+  width: 34%;
+  border-left: solid 1px #aaa;
+  border-right: solid 1px #aaa;
+}
+
+.highlight {
+  display: none;
+}
+
+.highlight.active {
+  display: block;
+}
+

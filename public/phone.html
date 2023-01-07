@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Controller</title>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/styles.css'>
+  <link rel='stylesheet' href='//yoannmoinet.github.io/nipplejs/stylesheets/github-light.css'>
+  <link rel="stylesheet" href="./phone.css">
+  <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+  <script src="src/index.js"></script>
+  <div class="header">
+    <img id="back" src="back_button.svg" alt="back button">
+    <h1>Joystick Controller</h1>
+    <img id="battery" src="battery.svg" alt="battery" onclick="robot.getBattery()">
+  </div>
+
+  <div class="content">
+    <div class="buttons">
+      <button onclick="robot.connect()">Connect</button>
+      <button onclick="robot.disconnect()">Disconnect</button>
+      <button onclick="robot.disconnect()">Help</button>
+    </div>
+
+    <div class="joystick">
+      <div class="static highlight highlight-javascript active">
+      </div>
+
+      <div id="zone_joystick">
+        <div id="debug">
+        </div>
+        <div class="zone static active"></div>
+      </div>
+    </div>
+  
+
+  <script src='//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js'></script>
+  <script src="./phone.js"></script>
+
+</body>
+</html>
