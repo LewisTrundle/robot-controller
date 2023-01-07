@@ -6,9 +6,12 @@ npm run build
 # Checkout the "gh-pages" branch
 git checkout -b gh-pages
 
-# move css and js files to build folder
-mv public/style.css ./build
-mv public/joystick.js ./build
+# move files to build folder
+mv public/images ./build
+mv public/joystick ./build
+mv public/joystick.html ./build
+mv public/joystick-dev.html ./build
+mv public/line-tracking.html ./build
 
 # Remove all files from the current directory, except for ".git"
 find . -maxdepth 1 ! -name '.git' ! -name 'build' ! -name '.gitignore' ! -name 'node_modules' -exec rm -rf {} \;
