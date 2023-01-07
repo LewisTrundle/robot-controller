@@ -37,7 +37,7 @@ body {
 
 }
 
-.header #battery {
+.header .header-buttons {
   position: absolute;
   cursor: pointer;
   right: 20px;
@@ -110,17 +110,4 @@ body {
   background-color: var(--light-red);
 }
 
-.button:nth-child(2) {
-  width: 34%;
-  border-left: solid 1px #aaa;
-  border-right: solid 1px #aaa;
-}
-
-.highlight {
-  display: none;
-}
-
-.highlight.active {
-  display: block;
-}
 
