@@ -2,6 +2,8 @@
   --black: #0c0c0c;
   --white: #ffffff;
   --dark-blue: #0B406C;
+  --dark-red: #FF0000AA;
+  --light-red: #FF000033;
   --main-font: "Digital Numbers";
 }
 
@@ -72,6 +74,11 @@ body {
   min-height: 10%;
   margin: 25px;
   border-radius: 15px;
+  font-size: 17px;
+}
+
+.buttons button:hover {
+  background-color: grey;
 }
 
 .joystick {
@@ -100,21 +107,7 @@ body {
 .zone.static {
   height: 100%;
   border-radius: 10px;
-  background: rgba(255, 0, 0, 0.2);
-}
-
-
-.button:hover {
-  background: #eee;
-}
-
-.button:active {
-  background: #ddd;
-}
-
-.button.active {
-  color: white;
-  background: #888;
+  background-color: var(--light-red);
 }
 
 .button:nth-child(2) {
