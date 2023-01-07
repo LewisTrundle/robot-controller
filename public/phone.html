@@ -25,7 +25,7 @@
     <div class="buttons">
       <button onclick="robot.connect()">Connect</button>
       <button onclick="robot.disconnect()">Disconnect</button>
-      <button onclick="robot.disconnect()">Help</button>
+      <button id="myBtn">Help</button>
     </div>
 
     <div class="joystick">
@@ -38,7 +38,22 @@
         <div class="zone static active"></div>
       </div>
     </div>
-  
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>How to Use</h2>
+        </div>
+        <div class="modal-body">
+          <p>Detail instructions are explained <a href="https://github.com/Kirstin813/L4-Individual-Project/tree/main/src#connecting-to-robot">here</a></p>
+        </div>
+        <div class="modal-footer">
+          <h3>Thanks for reading :)</h3>
+        </div>
+      </div>
+    </div>
 
   <script src='//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js'></script>
   <script src="./phone.js"></script>
