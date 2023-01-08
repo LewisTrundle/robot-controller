@@ -22,7 +22,6 @@ body {
 .header {
   display: flex;
   height: 50px;
-  min-height: 10%;
   width: 100%;
   background-color: var(--black);
   align-items: center;
@@ -52,7 +51,7 @@ body {
 
 .content {
   display: flex;
-  height: 100%;
+  height: 85%;
   margin: 20px;
 }
 
@@ -81,6 +80,8 @@ body {
   background-color: grey;
 }
 
+
+/* JOYSTICK */
 .joystick {
   height: 100%;
   width: 65%;
