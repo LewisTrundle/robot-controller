@@ -21,7 +21,7 @@ body {
 /* HEADER SECTION */
 .header {
   display: flex;
-  height: 50px;
+  height: 65px;
   width: 100%;
   background-color: var(--black);
   align-items: center;
@@ -49,13 +49,17 @@ body {
 }
 
 
+/* CONTENT SECTION */
 .content {
   display: flex;
   height: 85%;
   margin: 20px;
 }
 
-.buttons {
+
+/* BUTTONS SECTION */
+.buttons,
+.buttons-main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +67,12 @@ body {
   width: 35%;
 }
 
-.buttons button {
+.center-buttons {
+  width: 100%;
+}
+
+.buttons button,
+.buttons button a {
   cursor: pointer;
   background: var(--black);
   color: var(--white);
@@ -74,14 +83,17 @@ body {
   margin: 25px;
   border-radius: 15px;
   font-size: 17px;
+  text-decoration: none;
+  text-align: center;
 }
 
-.buttons button:hover {
+.buttons button:hover,
+.buttons button:hover a {
   background-color: grey;
 }
 
 
-/* JOYSTICK */
+/* JOYSTICK SECTION */
 .joystick {
   height: 100%;
   width: 65%;
