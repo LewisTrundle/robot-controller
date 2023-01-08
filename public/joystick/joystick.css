@@ -21,7 +21,7 @@ body {
 /* HEADER SECTION */
 .header {
   display: flex;
-  height: 50px;
+  height: 65px;
   width: 100%;
   background-color: var(--black);
   align-items: center;

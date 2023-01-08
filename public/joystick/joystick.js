@@ -6,7 +6,7 @@ var joysticks = {
   static: {
     zone: s('.zone.static'),
     mode: 'static',
-    size: 250,
+    size: 230,
     position: {
       left: '50%',
       top: '50%'
