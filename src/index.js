@@ -5,7 +5,7 @@ const angle_mapping_left = Piecewise([0, 45, 90, 135, 180, 225, 270, 315, 360], 
 const angle_mapping_right = Piecewise([0, 45, 90, 135, 180, 225, 270, 315, 360], [0, 0, 1, 1, 1, 1, -1, 0, 0])
   
 let robot = new Robot();
-// no whitespace allowed between () an {
+// no whitespace allowed between () and {
 // no whitespace allowed between functions
 // get device code doesn't work
 let code = `
