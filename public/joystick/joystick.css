@@ -72,7 +72,7 @@ body {
 }
 
 .buttons button,
-.buttons button a {
+.buttons a {
   cursor: pointer;
   background: var(--black);
   color: var(--white);
@@ -80,11 +80,16 @@ body {
   width: 50%;
   height: 100px;
   min-height: 10%;
-  margin: 25px;
   border-radius: 15px;
   font-size: 17px;
+  margin: 25px;
   text-decoration: none;
   text-align: center;
+}
+
+.buttons a button {
+  width: 100%;
+  margin: 0px;
 }
 
 .buttons button:hover,
